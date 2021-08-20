@@ -9,6 +9,17 @@ const connectionString = process.env.DB_STRING;
 //middleware
 app.use(express.json());
 
+//Routes
+// const categoriesRoutes = require("./routes/categories");
+// const productsRoutes = require("./routes/products");
+// const usersRoutes = require("./routes/users");
+// const ordersRoutes = require("./routes/orders");
+
+// app.use("categories", categoriesRoutes);
+// app.use("products", productsRoutes);
+// app.use("users", usersRoutes);
+// app.use("orders", ordersRoutes);
+
 mongoose
   .connect(connectionString, {
     useUnifiedTopology: true,
