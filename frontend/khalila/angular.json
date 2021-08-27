@@ -1,0 +1,274 @@
+{
+  "version": 1,
+  "projects": {
+    "barakeh-admin": {
+      "projectType": "application",
+      "root": "apps/barakeh-admin",
+      "sourceRoot": "apps/barakeh-admin/src",
+      "prefix": "khalila",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/barakeh-admin",
+            "index": "apps/barakeh-admin/src/index.html",
+            "main": "apps/barakeh-admin/src/main.ts",
+            "polyfills": "apps/barakeh-admin/src/polyfills.ts",
+            "tsConfig": "apps/barakeh-admin/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/barakeh-admin/src/favicon.ico",
+              "apps/barakeh-admin/src/assets"
+            ],
+            "styles": ["apps/barakeh-admin/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/barakeh-admin/src/environments/environment.ts",
+                  "with": "apps/barakeh-admin/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "barakeh-admin:build:production"
+            },
+            "development": {
+              "browserTarget": "barakeh-admin:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "barakeh-admin:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/barakeh-admin/src/**/*.ts",
+              "apps/barakeh-admin/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/barakeh-admin"],
+          "options": {
+            "jestConfig": "apps/barakeh-admin/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "barakeh-admin-e2e": {
+      "root": "apps/barakeh-admin-e2e",
+      "sourceRoot": "apps/barakeh-admin-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/barakeh-admin-e2e/cypress.json",
+            "devServerTarget": "barakeh-admin:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "barakeh-admin:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/barakeh-admin-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "barakeh-supermarket": {
+      "projectType": "application",
+      "root": "apps/barakeh-supermarket",
+      "sourceRoot": "apps/barakeh-supermarket/src",
+      "prefix": "khalila",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/barakeh-supermarket",
+            "index": "apps/barakeh-supermarket/src/index.html",
+            "main": "apps/barakeh-supermarket/src/main.ts",
+            "polyfills": "apps/barakeh-supermarket/src/polyfills.ts",
+            "tsConfig": "apps/barakeh-supermarket/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/barakeh-supermarket/src/favicon.ico",
+              "apps/barakeh-supermarket/src/assets"
+            ],
+            "styles": ["apps/barakeh-supermarket/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/barakeh-supermarket/src/environments/environment.ts",
+                  "with": "apps/barakeh-supermarket/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "barakeh-supermarket:build:production"
+            },
+            "development": {
+              "browserTarget": "barakeh-supermarket:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "barakeh-supermarket:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/barakeh-supermarket/src/**/*.ts",
+              "apps/barakeh-supermarket/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/barakeh-supermarket"],
+          "options": {
+            "jestConfig": "apps/barakeh-supermarket/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "barakeh-supermarket-e2e": {
+      "root": "apps/barakeh-supermarket-e2e",
+      "sourceRoot": "apps/barakeh-supermarket-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/barakeh-supermarket-e2e/cypress.json",
+            "devServerTarget": "barakeh-supermarket:serve:development",
+            "tsConfig": "apps/barakeh-supermarket-e2e/tsconfig.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "barakeh-supermarket:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/barakeh-supermarket-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular",
+    "packageManager": "npm"
+  },
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "barakeh-supermarket"
+}
