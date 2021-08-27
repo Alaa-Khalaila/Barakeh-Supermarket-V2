@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const orderSchema = {
+const orderSchema = mongoose.Schema({
   orderItems: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "OrderItem",
@@ -28,7 +28,7 @@ const orderSchema = {
   notes: {
     type: String,
   },
-};
+});
 
 orderSchema.virtual("id").get(function () {
   return this._id.toHexString();
