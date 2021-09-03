@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@khalila/products": ["libs/products/src/index.ts"],
+      "@khalila/ui": ["libs/ui/src/index.ts"],
+      "@khalila/users": ["libs/users/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -40,6 +40,15 @@
     "barakeh-supermarket-e2e": {
       "tags": [],
       "implicitDependencies": ["barakeh-supermarket"]
+    },
+    "products": {
+      "tags": []
+    },
+    "ui": {
+      "tags": []
+    },
+    "users": {
+      "tags": []
     }
   }
 }

@@ -2,14 +2,34 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router';
-import { DashbordsComponent } from './pages/dashbords/dashbords.component';
+import { RouterModule, Routes } from '@angular/router';
+import { ShellComponent } from './shared/shell/shell.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { DashboardsComponent } from './pages/dashboards/dashboards.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: ShellComponent,
+    children: [
+      {
+        path: 'dashboards',
+        component: DashboardsComponent,
+      },
+    ],
+  },
+];
 
 @NgModule({
-  declarations: [AppComponent, DashbordsComponent],
+  declarations: [
+    AppComponent,
+    ShellComponent,
+    SidebarComponent,
+    DashboardsComponent,
+  ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([], { initialNavigation: 'enabledBlocking' }),
+    RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
   ],
   providers: [],
   bootstrap: [AppComponent],
