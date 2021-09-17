@@ -1,0 +1,20 @@
+<svg class="burger-icon" (click)="openSidebar($event)">
+  <use xlink:href="../../../assets/icons/barakeh-admin-icons.svg#burger"></use>
+</svg>
+<aside class="admin-sidebar" [ngClass]="{ show: show }" #sidebar>
+  <header class="admin-sidebar__logo">
+    <img [src]="logo" alt="" />
+  </header>
+  <ul class="admin-sidebar__list">
+    <li *ngFor="let item of dashList" class="admin-sidebar__list-item">
+      <svg class="admin-sidebar__list-item__icon">
+        <use [attr.xlink:href]="item.icon"></use>
+      </svg>
+      <a
+        (click)="changeRoute(item.route)"
+        class="admin-sidebar__list-item__text"
+        >{{ item.name }}</a
+      >
+    </li>
+  </ul>
+</aside>

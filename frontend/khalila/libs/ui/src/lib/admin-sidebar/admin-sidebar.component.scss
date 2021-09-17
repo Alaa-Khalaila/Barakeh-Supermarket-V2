@@ -1,0 +1,68 @@
+.admin-sidebar {
+  width: 200px;
+  background-color: #050010;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  &__logo {
+    width: 100%;
+  }
+
+  &__list {
+    font-size: 2rem;
+    padding: 10px 20px 20px 20px;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      margin: 0 0 20px 0;
+
+      &__icon {
+        fill: #fff;
+        height: 20px;
+        width: 20px;
+        margin-right: 10px;
+      }
+
+      &__text {
+        color: #fff;
+      }
+
+      &:last-child {
+        a {
+          color: #da5046;
+        }
+        .admin-sidebar__list-item__icon {
+          fill: #da5046;
+        }
+      }
+    }
+  }
+}
+
+.burger-icon {
+  display: none;
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 5px 10px 0 0;
+}
+
+@media only screen and (max-width: 400px) {
+  .burger-icon {
+    display: block;
+  }
+
+  .admin-sidebar {
+    left: -200px;
+    transition-duration: 0.5s;
+  }
+  .admin-sidebar.show {
+    transition-duration: 0.5s;
+    transform: translateX(200px);
+  }
+}

@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ShellComponent } from './shared/shell/shell.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { DashboardsComponent } from './pages/dashboards/dashboards.component';
+import { UiModule } from '@khalila/ui';
 
 const routes: Routes = [
   {
@@ -21,14 +21,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ShellComponent,
-    SidebarComponent,
-    DashboardsComponent,
-  ],
+  declarations: [AppComponent, ShellComponent, DashboardsComponent],
   imports: [
     BrowserModule,
+    UiModule,
     RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
   ],
   providers: [],
