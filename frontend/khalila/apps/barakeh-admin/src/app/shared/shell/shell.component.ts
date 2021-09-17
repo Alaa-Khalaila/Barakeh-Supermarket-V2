@@ -1,15 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'khalila-shell',
+  selector: 'admin-shell',
   templateUrl: './shell.component.html',
-  styleUrls: ['./shell.component.scss']
 })
-export class ShellComponent implements OnInit {
+export class ShellComponent {
+  logo = '../../assets/images/logo.png';
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  dashList = [
+    {
+      name: 'Dashboards',
+      icon: '../../../assets/icons/barakeh-admin-icons.svg#house',
+      route: 'dashboards',
+    },
+    {
+      name: 'Products',
+      icon: '../../../assets/icons/barakeh-admin-icons.svg#open-box',
+    },
+    {
+      name: 'Categories',
+      icon: '../../../assets/icons/barakeh-admin-icons.svg#list',
+    },
+    {
+      name: 'Orders',
+      icon: '../../../assets/icons/barakeh-admin-icons.svg#shopping-cart',
+    },
+    {
+      name: 'Users',
+      icon: '../../../assets/icons/barakeh-admin-icons.svg#user',
+    },
+    {
+      name: 'Logout',
+      icon: '../../../assets/icons/barakeh-admin-icons.svg#logout',
+    },
+  ];
 }
